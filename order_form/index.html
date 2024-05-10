@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar Vacation</title>
+    <link href="styles.css" rel="stylesheet">
+</head> 
+<body>
+    <div class="wrapper">
+        <section>
+            <h1>Interstellar Vacation Order Form</h1>
+            <p>Fill out the form below to place an order for a galactic vacation</p>
+        <form action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES" method="POST">
+            <input type="hidden" name="send_to" value="andystuckey@mail.com">
+            <fieldset>
+            <legend>Your contact information</legend>
+            <label for="name">Your name</label>
+                <input type="text" id="name" name="name">
+            <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Don't forget your area code">
+            <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </fieldset>
+            <fieldset>
+            <legend>About your vacation</legend>
+            <label for="date">Requested date</label>
+                <input type="date" id="date" name="date">
+            <label for="qty">How many members?</label>
+                <input type="number" id="qty" name="qty" min="1" max="6">
+            <p>Type of transport  preferred?</p>
+            <label>
+                <input type="radio" name="ufotype" value="Classic" checked>Classic oval UFO
+            </label>
+            <label>    
+                <input type="radio" name="ufotype" value="Cruiser">Imperial Cruiser
+            </label>
+            <label>
+                <input type="radio" name="ufotype" value="Falcon">Millenium Falcon
+            </label>
+            <label>
+                <input type="radio" name="ufotype" value="Cube">Borg-style Cube
+            </label>
+            <label for="vacation">Type of vacation experience?</label>
+            <select id="vacation" name="vacation">
+                <Option selected>Select one.....</Option>    
+                <option value="tour">Tour of the solar system</option>>
+                <option value="dinner">Alien Dinner</option>
+                <option value="surf">Astreroid Belt Surfing</option>
+                <option value="relax">Zero Gravity Relaxation</option>
+            </select>
+            
+            <label for="comments">Special requests:</label>
+            <textarea name="comments" id="comments"></textarea>
+            
+            <label>
+            <input type="checkbox" value="subscribe" name="subscribe" checked> Add me to your email list!
+            </label>
+        </fieldset>
+        <button type="submit">Submit Order</button>
+            </form>
+            </section>
+            <aside>
+                <h3>Our Location</h3>
+                    <address>
+                        Frontend Masters &middot;
+                        60 South 6th Street &middot;
+                        Suite 3625 &middot;
+                        Minneapolis, MN 55402  
+                    </address>
+            </aside>
+    </div>
+<script src="../js/forms.js"></script>
+</body>
+</html>
